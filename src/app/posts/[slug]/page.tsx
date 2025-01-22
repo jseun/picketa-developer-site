@@ -5,7 +5,7 @@ import { CMS_NAME } from "@/lib/constants";
 import markdownToHtml from "@/lib/markdownToHtml";
 import Alert from "@/app/_components/alert";
 import Container from "@/app/_components/container";
-import Header from "@/app/_components/header";
+import { Intro } from "@/app/_components/intro";
 import { PostBody } from "@/app/_components/post-body";
 import { PostHeader } from "@/app/_components/post-header";
 
@@ -23,7 +23,7 @@ export default async function Post(props: Params) {
     <main>
       <Alert preview={post.preview} />
       <Container>
-        <Header />
+        <Intro />
         <article className="mb-32">
           <PostHeader
             title={post.title}
