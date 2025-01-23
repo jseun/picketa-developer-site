@@ -1,74 +1,86 @@
-# A statically generated blog example using Next.js, Markdown, and TypeScript
+# Picketa for Developers
 
-This is the existing [blog-starter](https://github.com/vercel/next.js/tree/canary/examples/blog-starter) plus TypeScript.
+This is the official developer site for Picketa Systems, where our engineering team shares insights, experiences, and technical knowledge. Built with Next.js and deployed on AWS Amplify, this site serves as both our engineering blog and upcoming API documentation platform.
 
-This example showcases Next.js's [Static Generation](https://nextjs.org/docs/app/building-your-application/routing/layouts-and-templates) feature using Markdown files as the data source.
+## Purpose
 
-The blog posts are stored in `/_posts` as Markdown files with front matter support. Adding a new Markdown file in there will create a new blog post.
+- Share our engineering journey and technical insights
+- Document our solutions to complex agricultural technology challenges
+- Provide up-to-date API documentation for our services
+- Foster collaboration and knowledge sharing within the agtech community
 
-To create the blog posts we use [`remark`](https://github.com/remarkjs/remark) and [`remark-html`](https://github.com/remarkjs/remark-html) to convert the Markdown files into an HTML string, and then send it down as a prop to the page. The metadata of every post is handled by [`gray-matter`](https://github.com/jonschlinkert/gray-matter) and also sent in props to the page.
+## Features
 
-## Demo
+- Markdown-based content management
+- Author profiles with social links
+- Responsive design
+- Dark mode support
+- Automated deployment through AWS Amplify
 
-[https://next-blog-starter.vercel.app/](https://next-blog-starter.vercel.app/)
+## Getting Started
 
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/blog-starter)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/blog-starter&project-name=blog-starter&repository-name=blog-starter)
-
-### Related examples
-
-- [AgilityCMS](/examples/cms-agilitycms)
-- [Builder.io](/examples/cms-builder-io)
-- [ButterCMS](/examples/cms-buttercms)
-- [Contentful](/examples/cms-contentful)
-- [Cosmic](/examples/cms-cosmic)
-- [DatoCMS](/examples/cms-datocms)
-- [DotCMS](/examples/cms-dotcms)
-- [Drupal](/examples/cms-drupal)
-- [Enterspeed](/examples/cms-enterspeed)
-- [Ghost](/examples/cms-ghost)
-- [GraphCMS](/examples/cms-graphcms)
-- [Kontent.ai](/examples/cms-kontent-ai)
-- [MakeSwift](/examples/cms-makeswift)
-- [Payload](/examples/cms-payload)
-- [Plasmic](/examples/cms-plasmic)
-- [Prepr](/examples/cms-prepr)
-- [Prismic](/examples/cms-prismic)
-- [Sanity](/examples/cms-sanity)
-- [Sitecore XM Cloud](/examples/cms-sitecore-xmcloud)
-- [Sitefinity](/examples/cms-sitefinity)
-- [Storyblok](/examples/cms-storyblok)
-- [TakeShape](/examples/cms-takeshape)
-- [Tina](/examples/cms-tina)
-- [Umbraco](/examples/cms-umbraco)
-- [Umbraco heartcore](/examples/cms-umbraco-heartcore)
-- [Webiny](/examples/cms-webiny)
-- [WordPress](/examples/cms-wordpress)
-- [Blog Starter](/examples/blog-starter)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+Start by forking the repository on GitHub then clone it to your local machine:
 
 ```bash
-npx create-next-app --example blog-starter blog-starter-app
+# Clone the repository
+git clone https://github.com/<your-username>/picketa-developer-site.git
+
+# Navigate to the project directory
+cd picketa-developer-site
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
 ```
 
-```bash
-yarn create next-app --example blog-starter blog-starter-app
-```
+Visit [http://localhost:3000](http://localhost:3000) to see the site.
 
-```bash
-pnpm create next-app --example blog-starter blog-starter-app
-```
+## Contributing
 
-Your blog should be up and running on [http://localhost:3000](http://localhost:3000)! If it doesn't work, post on [GitHub discussions](https://github.com/vercel/next.js/discussions).
+### Adding a New Post
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+1. Create a new markdown file in `_posts/` using kebab-case naming
+2. Include the required frontmatter:
+   ```markdown
+   ---
+   title: "Your Post Title"
+   excerpt: "Brief description of your post"
+   coverImage: "/assets/blog/your-post/cover.jpg"
+   date: "YYYY-MM-DDTHH:mm:ss-04:00"
+   author: your-author-id
+   ogImage:
+     url: "/assets/blog/your-post/cover.jpg"
+   ---
+   ```
+3. Write your content in markdown
+4. Create a Pull Request for review
 
-# Notes
+### Adding an Author
 
-`blog-starter` uses [Tailwind CSS](https://tailwindcss.com) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3).
+1. Create a new markdown file in `_authors/` (e.g., `your-name.md`)
+2. Include the required frontmatter:
+   ```markdown
+   ---
+   name: "Your Name"
+   picture: "/assets/blog/authors/your-picture.jpeg"
+   role: "Your Role"
+   bio: "Your bio"
+   social:
+     github: "https://github.com/yourusername"
+     linkedin: "https://linkedin.com/in/yourusername"
+     twitter: "https://twitter.com/yourusername"
+   ---
+   ```
+
+## Development
+
+- Built with [Next.js](https://nextjs.org/)
+- Styled with [Tailwind CSS](https://tailwindcss.com/)
+- Content managed with Markdown
+- Deployed on [AWS Amplify](https://aws.amazon.com/amplify/)
+
+## License
+
+Copyright 2025 Picketa Systems. All rights reserved.
