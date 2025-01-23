@@ -3,5 +3,9 @@ export type Author = {
   picture: string;
   role?: string;
   bio?: string;
-  github?: string;
+  social?: {
+    github?: string;
+    twitter?: string;
+    linkedin?: string;
+  };
 };

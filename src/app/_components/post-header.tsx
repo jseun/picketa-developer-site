@@ -1,6 +1,7 @@
 import Avatar from "./avatar";
 import CoverImage from "./cover-image";
 import { PostTitle } from "@/app/_components/post-title";
+import { PostSection } from "@/app/_components/post-section";
 import { type Author } from "@/interfaces/author";
 
 type Props = {
@@ -18,9 +19,9 @@ export function PostHeader({ title, coverImage, date, author, excerpt }: Props) 
       <div className="mb-8">
         <Avatar name={author.name} picture={author.picture} date={date} />
       </div>
-      <div className="mb-12 -mx-4 sm:mx-0">
+      <PostSection>
         <CoverImage title={title} src={coverImage} />
-      </div>
+      </PostSection>
     </>
   );
 }

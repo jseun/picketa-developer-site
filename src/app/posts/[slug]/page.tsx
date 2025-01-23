@@ -8,6 +8,7 @@ import Container from "@/app/_components/container";
 import { Intro } from "@/app/_components/intro";
 import { PostBody } from "@/app/_components/post-body";
 import { PostHeader } from "@/app/_components/post-header";
+import { PostFooter } from "@/app/_components/post-footer";
 
 export default async function Post(props: Params) {
   const params = await props.params;
@@ -33,6 +34,7 @@ export default async function Post(props: Params) {
             excerpt={post.excerpt}
           />
           <PostBody content={content} />
+          <PostFooter author={post.author} />
         </article>
       </Container>
     </main>

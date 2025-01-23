@@ -1,4 +1,5 @@
 import markdownStyles from "./markdown-styles.module.css";
+import { PostSection } from "@/app/_components/post-section";
 
 type Props = {
   content: string;
@@ -6,11 +7,11 @@ type Props = {
 
 export function PostBody({ content }: Props) {
   return (
-    <div className="mb-12 -mx-4 sm:mx-0">
+    <PostSection>
       <div
         className={markdownStyles["markdown"]}
         dangerouslySetInnerHTML={{ __html: content }}
       />
-    </div>
+    </PostSection>
   );
 }
