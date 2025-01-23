@@ -47,10 +47,12 @@
 
 .markdown pre {
   @apply my-8 p-4 rounded-lg overflow-auto;
+  @apply bg-neutral-100;
 }
 
 .markdown code {
   @apply px-1.5 py-0.5 rounded text-sm font-mono;
+  @apply bg-neutral-200;
 }
 
 .markdown pre code {
