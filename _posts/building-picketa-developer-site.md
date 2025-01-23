@@ -1,6 +1,6 @@
 ---
 title: "Building the Picketa for Developers site"
-excerpt: "How we leveraged modern tools like Next.js, AWS Amplify, GitHub, and Windsurf with Cascade to build and deploy the Picketa for Developers site in a single morning, creating a platform for our engineering team to share their stories and insights."
+excerpt: "How we leveraged modern tools like Next.js, AWS Amplify, and GitHub to build and deploy the Picketa for Developers site in a single morning, creating a platform for our engineering team to share their stories and insights."
 coverImage: "/assets/blog/building-picketa-developer-site/cover.jpg"
 date: "2025-01-22T12:11:21-04:00"
 author: jseun
@@ -33,7 +33,7 @@ Instead, we needed a solution that would:
 - Deploy automatically when changes are merged
 - Provide a foundation for our upcoming API documentation, which will be automatically updated through GitHub Actions
 
-## Starting with a template
+## Starting with a Template
 
 We began with Vercel's excellent [blog-starter](https://github.com/vercel/next.js/tree/canary/examples/blog-starter) template, which provides a clean, performant foundation built with Next.js. Here's how to get started:
 
@@ -298,70 +298,32 @@ The frontmatter (the YAML section between `---`) defines metadata about the post
 
 We store all posts in the `_posts` directory, with each file named using kebab-case (e.g., `building-picketa-developer-site.md`). Images and other assets are organized in the `public/assets/blog` directory, keeping everything neat and accessible.
 
-## Development Tools and Workflow
-
-Our development workflow is built around tools that enhance productivity while maintaining code quality:
-
-### TypeScript and ESLint
-
-We use TypeScript for type safety and ESLint for code quality:
-
-```bash
-# Add TypeScript support
-npm install --save-dev typescript @types/node
-
-# Add ESLint for code quality
-npm install --save-dev eslint
-```
-
-### Styling with Tailwind CSS
-
-Tailwind CSS provides utility-first styling that makes it easy to create consistent, responsive designs:
-
-```bash
-# Add Tailwind CSS and its dependencies
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
-```
-
-### Git Workflow
-
-Our Git-based workflow ensures quality and collaboration:
-
-1. **Feature Branches**: Each new post or feature gets its own branch
-2. **Pull Requests**: All changes go through PR review
-3. **Preview Deployments**: Amplify creates a preview for each PR
-4. **Automated Checks**: ESLint and TypeScript checks run on each commit
-5. **Merge and Deploy**: Approved changes automatically deploy to production
-
-This approach means both code and content go through the same rigorous review process, maintaining high quality across the site.
-
 ## Seamless Deployment with AWS Amplify
 
 One of our key requirements was keeping deployment simple and automated, fitting naturally into our Git workflow. AWS Amplify Console was the perfect solution because it:
 
-1. Connects directly to our GitHub repository with just a few clicks
-2. Automatically builds and deploys on merge to main
-3. Provides preview deployments for Pull Requests, making content review easier
-4. Integrates with our existing AWS infrastructure
-5. Handles all the build configuration automatically for Next.js
+1. Integrates directly with our GitHub repository
+2. Deploys automatically when changes are merged to main
+3. Provides built-in support for Next.js applications
 
 Setting up deployment was straightforward:
 
-1. Visit the AWS Amplify Console
-2. Click "New App" and choose "Host Web App"
-3. Connect your GitHub repository and select the branch to deploy
-4. Amplify automatically detects it's a Next.js app and configures the build settings
-5. Click through the remaining steps, and you're done!
+1. Navigate to AWS Amplify Console
+2. Click "Create new app" and choose GitHub as the Git provider
+3. Connect your GitHub repository and select the main branch
+4. Let Amplify detect the Next.js app and configure build settings
+5. Review and confirm the deployment
 
 After this initial setup, our deployment process became entirely Git-driven:
 1. Write a new blog post in markdown
 2. Create a Pull Request
-3. Get feedback from the team (with a preview deployment to review)
+3. Get feedback from the team (can checkout the branch and view the post locally with `npm run dev`)
 4. Merge to main
 5. Amplify automatically deploys the changes
 
-This workflow means our content goes through the same quality checks as our code, and we never have to worry about manual deployments or content synchronization. The preview environments are particularly helpful for reviewing how posts will look in production before merging.
+This workflow means our content goes through the same quality checks as our code, and we never have to worry about manual deployments or content synchronization. Running NextJS locally is useful for reviewing how posts will look in production before merging.
+
+You could also deploy to Vercel or Netlify if you prefer, but AWS Amplify is a great choice for our needs as that's where our application is hosted.
 
 ## Looking Forward
 
@@ -371,7 +333,8 @@ This site will serve as a platform for our engineering team to share:
 - Project retrospectives
 - Engineering culture stories
 - Open source contributions
+- Our API specification
 
-By leveraging modern tools and embracing automation, we were able to create this platform in just one morning. It's a testament to how far development tools have come and how they can help teams move quickly without sacrificing quality.
+By leveraging Next.js, GitHub, and AWS Amplify, we were able to create this platform in just one morning. It's a testament to how far web development tools have come and how a well-chosen tech stack can help teams move quickly without sacrificing quality.
 
 We're excited to start sharing our engineering journey at Picketa, where we're building the future of agricultural technology. Stay tuned for more posts from our team!
