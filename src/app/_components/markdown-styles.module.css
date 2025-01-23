@@ -1,5 +1,5 @@
 .markdown {
-  @apply text-lg leading-relaxed text-neutral-800 dark:text-neutral-200;
+  @apply text-lg leading-relaxed;
 }
 
 .markdown p {
@@ -25,32 +25,32 @@
 }
 
 .markdown blockquote {
-  @apply my-8 pl-6 py-1 border-l-4 border-neutral-200 dark:border-neutral-700 italic text-neutral-600 dark:text-neutral-400;
+  @apply my-8 pl-6 py-1 border-l-4 italic;
 }
 
 .markdown h2 {
-  @apply text-3xl font-bold mt-16 mb-6 leading-snug text-neutral-900 dark:text-neutral-100;
-  @apply pb-2 border-b border-neutral-200 dark:border-neutral-800;
+  @apply text-3xl font-bold mt-16 mb-6 leading-snug;
+  @apply pb-2 border-b;
 }
 
 .markdown h3 {
-  @apply text-2xl font-semibold mt-10 mb-4 leading-snug text-neutral-900 dark:text-neutral-100;
+  @apply text-2xl font-semibold mt-10 mb-4 leading-snug;
 }
 
 .markdown h4 {
-  @apply text-xl font-semibold mt-8 mb-4 leading-snug text-neutral-900 dark:text-neutral-100;
+  @apply text-xl font-semibold mt-8 mb-4 leading-snug;
 }
 
 .markdown a {
-  @apply text-blue-600 dark:text-blue-400 hover:underline;
+  @apply hover:underline;
 }
 
 .markdown pre {
-  @apply my-8 p-4 bg-neutral-100 dark:bg-neutral-900 rounded-lg overflow-auto;
+  @apply my-8 p-4 rounded-lg overflow-auto;
 }
 
 .markdown code {
-  @apply px-1.5 py-0.5 bg-neutral-100 dark:bg-neutral-900 rounded text-sm font-mono;
+  @apply px-1.5 py-0.5 rounded text-sm font-mono;
 }
 
 .markdown pre code {
@@ -58,11 +58,11 @@
 }
 
 .markdown img {
-  @apply my-8 rounded-lg shadow-lg dark:shadow-neutral-900;
+  @apply my-8 rounded-lg shadow-lg;
 }
 
 .markdown hr {
-  @apply my-12 border-neutral-200 dark:border-neutral-800;
+  @apply my-12 border;
 }
 
 .markdown table {
@@ -70,11 +70,11 @@
 }
 
 .markdown th {
-  @apply px-4 py-2 border border-neutral-200 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900 font-semibold text-left;
+  @apply px-4 py-2 border font-semibold text-left;
 }
 
 .markdown td {
-  @apply px-4 py-2 border border-neutral-200 dark:border-neutral-800;
+  @apply px-4 py-2 border;
 }
 
 .markdown *:first-child {
