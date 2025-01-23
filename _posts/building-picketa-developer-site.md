@@ -3,9 +3,7 @@ title: "Building the Picketa for Developers site"
 excerpt: "How we leveraged modern tools like Vercel's blog-starter, AWS Amplify, and Windsurf with Cascade to build and deploy the Picketa for Developers site in a single morning, creating a platform for our engineering team to share their stories and insights."
 coverImage: "/assets/blog/building-picketa-developer-site/cover.jpg"
 date: "2025-01-22T12:11:21-04:00"
-author:
-  name: Sam Jean
-  picture: "/assets/blog/authors/jseun.jpeg"
+author: jseun
 ogImage:
   url: "/assets/blog/building-picketa-developer-site/cover.jpg"
 ---
