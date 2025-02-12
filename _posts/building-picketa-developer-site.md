@@ -1,11 +1,11 @@
 ---
 title: "Building the Picketa for Developers site"
 excerpt: "How we leveraged modern tools like Next.js, AWS Amplify, and GitHub to build and deploy the Picketa for Developers site in a single morning, creating a platform for our engineering team to share their stories and insights."
-coverImage: "/assets/blog/building-picketa-developer-site/cover.jpg"
+coverImage: "/assets/posts/building-picketa-developer-site/cover.jpg"
 date: "2025-01-22T12:11:21-04:00"
 author: jseun
 ogImage:
-  url: "/assets/blog/building-picketa-developer-site/cover.jpg"
+  url: "/assets/posts/building-picketa-developer-site/cover.jpg"
 ---
 
 At Picketa, we believe in sharing our engineering journey and insights with the broader developer community. This morning, we set out to create a platform where our team could share their stories, technical insights, and lessons learned. However, we had some specific requirements that would make this more than just another company blog.
