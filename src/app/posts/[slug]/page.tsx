@@ -1,8 +1,9 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/api";
-import { CMS_NAME } from "@/lib/constants";
 import markdownToHtml from "@/lib/markdownToHtml";
+import { SITE_URL } from "@/lib/constants";
+import { generateMetadata as baseGenerateMetadata, generateOgImageUrl } from "@/lib/metadata";
 import Alert from "@/app/_components/alert";
 import Container from "@/app/_components/container";
 import { Intro } from "@/app/_components/intro";
@@ -55,15 +56,26 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
     return notFound();
   }
 
-  const title = `${post.title} | Next.js Blog Example with ${CMS_NAME}`;
+  const ogImageUrl = generateOgImageUrl({
+    title: post.title,
+    description: post.excerpt,
+    authorName: post.author?.name,
+    authorPicture: post.author?.picture,
+    authorRole: post.author?.role,
+  });
 
-  return {
-    title,
+  return baseGenerateMetadata({
+    title: post.title,
+    description: post.excerpt,
     openGraph: {
-      title,
-      images: [post.ogImage.url],
+      type: 'article',
+      url: `${SITE_URL}/posts/${post.slug}`,
+      images: [{ url: ogImageUrl, width: 1200, height: 630, alt: post.title }],
     },
-  };
+    twitter: {
+      images: [ogImageUrl],
+    },
+  });
 }
 
 export async function generateStaticParams() {
