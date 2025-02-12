@@ -3,6 +3,13 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL,DEFAULT_OG_TITLE, DEFAULT_OG_DES
 
 export type MetadataOverrides = Partial<Metadata>;
 
+function ensureAbsoluteUrl(url: string): string {
+  if (url.startsWith('http://') || url.startsWith('https://')) {
+    return url;
+  }
+  return `${SITE_URL}${url.startsWith('/') ? '' : '/'}${url}`;
+}
+
 export function generateOgImageUrl(params: {
   title?: string;
   description?: string;
@@ -22,7 +29,7 @@ export function generateOgImageUrl(params: {
     ogImageUrl.searchParams.set('authorName', params.authorName);
   }
   if (params.authorPicture) {
-    ogImageUrl.searchParams.set('authorPicture', params.authorPicture);
+    ogImageUrl.searchParams.set('authorPicture', ensureAbsoluteUrl(params.authorPicture));
   }
   if (params.authorRole) {
     ogImageUrl.searchParams.set('authorRole', params.authorRole);
