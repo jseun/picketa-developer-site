@@ -49,7 +49,6 @@ export function generateMetadata(overrides: MetadataOverrides = {}): Metadata {
       images: [{
         url: generateOgImageUrl({ 
           title: DEFAULT_OG_TITLE,
-          description: DEFAULT_OG_DESCRIPTION 
         }),
         width: 1200,
         height: 630,
@@ -65,7 +64,6 @@ export function generateMetadata(overrides: MetadataOverrides = {}): Metadata {
       creator: '@picketasystems',
       images: [generateOgImageUrl({ 
         title: DEFAULT_OG_TITLE,
-        description: DEFAULT_OG_DESCRIPTION 
       })],
     },
   };
