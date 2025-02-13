@@ -62,6 +62,7 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
     authorName: post.author?.name,
     authorPicture: post.author?.picture,
     authorRole: post.author?.role,
+    backgroundImage: post.ogImage?.url,
   });
 
   return baseGenerateMetadata({

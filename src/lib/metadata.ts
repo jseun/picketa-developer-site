@@ -16,9 +16,9 @@ export function generateOgImageUrl(params: {
   authorName?: string;
   authorPicture?: string;
   authorRole?: string;
-}) {
+  backgroundImage?: string;
+}): string {
   const ogImageUrl = new URL('/api/og', SITE_URL);
-  
   if (params.title) {
     ogImageUrl.searchParams.set('title', params.title);
   }
@@ -34,7 +34,9 @@ export function generateOgImageUrl(params: {
   if (params.authorRole) {
     ogImageUrl.searchParams.set('authorRole', params.authorRole);
   }
-  
+  if (params.backgroundImage) {
+    ogImageUrl.searchParams.set('backgroundImage', ensureAbsoluteUrl(params.backgroundImage));
+  }
   return ogImageUrl.toString();
 }
 
