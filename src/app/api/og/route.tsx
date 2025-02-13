@@ -10,7 +10,6 @@ export async function GET(req: NextRequest) {
     const { searchParams } = new URL(req.url);
 
     const title = searchParams.get('title') || DEFAULT_OG_TITLE;
-    const description = searchParams.get('description') || DEFAULT_OG_DESCRIPTION;
     const authorName = searchParams.get('authorName');
     const authorPicture = searchParams.get('authorPicture');
     const authorRole = searchParams.get('authorRole');
@@ -60,24 +59,19 @@ export async function GET(req: NextRequest) {
             <div style={{ 
               display: 'flex',
               flexDirection: 'column',
-              marginTop: '40px',
+              margin: 'auto',
               flex: 1,
+              height: '100%',
+              justifyContent: 'center',
+              alignItems: 'center',
             }}>
               <div style={{ 
                 fontSize: '48px',
                 color: '#1E1E1E',
                 lineHeight: 1.2,
-                marginBottom: '20px',
+                textAlign: 'center',
               }}>
                 {title}
-              </div>
-              <div style={{ 
-                fontSize: '24px',
-                color: '#666666',
-                lineHeight: 1.5,
-                display: 'flex',
-              }}>
-                {description}
               </div>
             </div>
 

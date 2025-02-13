@@ -12,7 +12,6 @@ function ensureAbsoluteUrl(url: string): string {
 
 export function generateOgImageUrl(params: {
   title?: string;
-  description?: string;
   authorName?: string;
   authorPicture?: string;
   authorRole?: string;
@@ -21,9 +20,6 @@ export function generateOgImageUrl(params: {
   const ogImageUrl = new URL('/api/og', SITE_URL);
   if (params.title) {
     ogImageUrl.searchParams.set('title', params.title);
-  }
-  if (params.description) {
-    ogImageUrl.searchParams.set('description', params.description);
   }
   if (params.authorName) {
     ogImageUrl.searchParams.set('authorName', params.authorName);

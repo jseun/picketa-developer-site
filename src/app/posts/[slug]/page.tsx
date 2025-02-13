@@ -58,7 +58,6 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
 
   const ogImageUrl = generateOgImageUrl({
     title: post.title,
-    description: post.excerpt,
     authorName: post.author?.name,
     authorPicture: post.author?.picture,
     authorRole: post.author?.role,
